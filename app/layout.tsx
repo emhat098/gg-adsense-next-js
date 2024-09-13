@@ -17,14 +17,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-     <head>
+      <head>
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2083432074936499"
           crossOrigin="anonymous"
         />
       </head>
-      <body className={fontSans.className}>{children}</body>
+      <body className={fontSans.className}>
+        {children}
+      <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2083432074936499"
+            crossOrigin="anonymous" />
+        <ins className="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-2083432074936499"
+            data-ad-slot="6692300464"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </body>
     </html>
   );
 }
