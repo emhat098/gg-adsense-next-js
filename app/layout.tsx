@@ -40,9 +40,7 @@ export default function RootLayout({
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
-            (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: '2083432074936499',
-            enable_page_level_ads: true });`
+            (adsbygoogle = window.adsbygoogle || []).push({});`
         }}
       />
       {children}
