@@ -17,11 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2083432074936499"
-        crossOrigin="anonymous"
-      />
+     <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2083432074936499"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className={fontSans.className}>{children}</body>
     </html>
   );
