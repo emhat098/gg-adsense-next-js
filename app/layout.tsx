@@ -15,6 +15,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const ADSENSE_ID = process.env.NEXT_PUBLIC_ADSENSE_ID
   return (
     <html lang="en">
       <head>
@@ -25,16 +26,25 @@ export default function RootLayout({
         />
       </head>
       <body className={fontSans.className}>
-        {children}
-      <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2083432074936499"
-            crossOrigin="anonymous" />
-        <ins className="adsbygoogle"
-            style="display:block"
-            data-ad-client="ca-pub-2083432074936499"
-            data-ad-slot="6692300464"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      <ins
+        className="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-2083432074936499"
+        data-ad-slot="6692300464"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      />
+      <Script
+        id="adsbygoogle-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: ${ADSENSE_ID},
+            enable_page_level_ads: true });`
+        }}
+      />
+      {children}
       </body>
     </html>
   );
